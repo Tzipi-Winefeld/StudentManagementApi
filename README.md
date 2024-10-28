@@ -1,28 +1,49 @@
-Student Management API
-A simple ASP.NET Core API to manage a list of students, stored in a local JSON file.
+# Student Management API
 
-HTTP Status Codes
-GET - Retrieve List of Students
-URL: /api/students
-Method: GET
-Status Codes:
-200 OK     — Successfully retrieved the list of students.
-204 No Content — No students found in the list.
-POST - Add a New Student
-URL: /api/students
-Method: POST
-Request Body:
-{
-  "id": 1,
-  "name": "John Doe"
-}
-Status Codes:
-201 Created          — Student added successfully.
-400 Bad Request    — Invalid data provided.
-409 Conflict          — Student with the same ID already exists.
-DELETE - Remove a Student
-URL: /api/students/{id}
-Method: DELETE
-Status Codes:
-204 No Content   — Student successfully deleted.
-404 Not Found       — Student not found.
+## Description
+A simple API for managing a classroom student list using ASP.NET Core.  
+Data is stored locally in a JSON file, allowing basic CRUD operations without the need for a database.
+
+## Features
+- Retrieve the list of students
+- Add a new student to the list
+- Delete a student by ID
+- Handles various HTTP status codes to enhance API communication
+
+## How to Use
+1. **GET** `/api/students`  
+   Retrieves the list of students.
+
+2. **POST** `/api/students`  
+   Adds a new student with a unique ID and name.
+
+3. **DELETE** `/api/students/{id}`  
+   Deletes the specified student by ID.
+
+## HTTP Status Codes
+- **200 OK**  
+  Successfully retrieved data.
+
+- **201 Created**  
+  Student added successfully.
+
+- **204 No Content**  
+  No data to return (e.g., on successful deletion).
+
+- **400 Bad Request**  
+  Invalid input data.
+
+- **404 Not Found**  
+  Student not found by ID.
+
+- **409 Conflict**  
+  Student ID already exists.
+
+## Technologies Used
+- C# / .NET Core
+- ASP.NET Core Web API
+
+## Installation
+1. Clone the repository:  
+   ```bash
+   git clone https://github.com/Tzipi-Winefeld/student-management-api.git
